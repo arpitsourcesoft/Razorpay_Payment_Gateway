@@ -139,7 +139,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # API KEY
-API_KEY = env('API_KEY')
+API_KEY = "rzp_test_H4zVihrWO3P3Uc"
 
 # API SECURE KEY
 SECURE_KEY = env('SECURE_KEY')
