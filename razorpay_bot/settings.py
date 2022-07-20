@@ -132,13 +132,14 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # API KEY
-API_KEY = "rzp_test_H4zVihrWO3P3Uc"
+API_KEY = "env('API_KEY')"
 
 # API SECURE KEY
-SECURE_KEY = "VDu8G1UZcW5znJQDmb2WUK4T"
+SECURE_KEY = env('SECURE_KEY')
+
 # Email Details
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = "utkarsh.sourcesoft@gmail.com"
-EMAIL_HOST_PASSWORD = "xusbxxqicvhlsosy"
+EMAIL_HOST_USER = env('EMAIL_ID')
+EMAIL_HOST_PASSWORD = env('EMAIL_PASS')
 EMAIL_PORT = 587
