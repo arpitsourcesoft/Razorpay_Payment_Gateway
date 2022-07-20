@@ -1,1 +1,1 @@
-web: gunicorn razor.wsgi --log-file
+web: gunicorn razorpay_bot.wsgi --log-file -
