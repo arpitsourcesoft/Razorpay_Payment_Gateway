@@ -27,12 +27,11 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
-
+SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mytoycar.herokuapp.com/', 'localhost' ]
 
 
 # Application definition
@@ -49,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -124,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -131,14 +132,14 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # API KEY
-API_KEY = env('API_KEY')
+API_KEY = os.environ['API_KEY']
 
 # API SECURE KEY
-SECURE_KEY = env('SECURE_KEY')
+SECURE_KEY = os.environ['SECURE_KEY']
 
 # Email Details
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = env('EMAIL_ID')
-EMAIL_HOST_PASSWORD = env('EMAIL_PASS')
+EMAIL_HOST_USER = os.environ['EMAIL_ID']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASS']
 EMAIL_PORT = 587

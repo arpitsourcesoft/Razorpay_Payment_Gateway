@@ -1,6 +1,6 @@
 asgiref==3.5.2
 autopep8==1.6.0
-backports.zoneinfo==0.2.1;python_version<"3.9"
+backports.zoneinfo==0.2.1
 certifi==2022.6.15
 charset-normalizer==2.1.0
 dj-static==0.0.6
@@ -16,3 +16,5 @@ sqlparse==0.4.2
 static3==0.7.0
 toml==0.10.2
 urllib3==1.26.10
+waitress==2.1.2
+whitenoise==6.2.0
